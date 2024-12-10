@@ -1,5 +1,5 @@
 import prisma from "@/prisma/client";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import bcrypt from "bcrypt";
 
@@ -8,7 +8,7 @@ const schema = z.object({
   password: z.string().min(5),
 });
 
-export async function POST(request: NextResponse) {
+export async function POST(request: NextRequest) {
   const body = await request.json();
 
   const validation = schema.safeParse(body);
