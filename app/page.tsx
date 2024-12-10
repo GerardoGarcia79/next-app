@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 
 export default async function Home() {
@@ -15,4 +16,13 @@ export default async function Home() {
       <h1>Hello World</h1>
     </main>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const product = await fetch("");
+
+  return {
+    title: "",
+    description: "",
+  };
 }
